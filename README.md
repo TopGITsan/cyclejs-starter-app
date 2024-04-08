@@ -1,7 +1,6 @@
 cycle-webpack-starter
 ===
 
-Archived as no longer using.
 
 Cycle.js 5 with Webpack 5 Starter.
 
@@ -10,5 +9,5 @@ Cycle.js 5 with Webpack 5 Starter.
 
 ### Usage
 
-* `npm run dev` runs webpack-dev-server in watch mode
+* `npm run start` runs webpack-dev-server in watch mode
 * `npm run build` creates `dist/` assets
