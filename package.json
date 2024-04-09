@@ -6,6 +6,7 @@
     "xstream": "^11.14.0"
   },
   "devDependencies": {
+    "@picocss/pico": "^2.0.6",
     "css-loader": "^7.1.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.74.1",

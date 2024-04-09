@@ -16,7 +16,7 @@ function main(sources : Sources): Sinks {
   const name$ = input$.map((ev: Event) => (ev.target as HTMLInputElement).value).startWith('')
 
   const vdom$ = name$.map((name: string) =>
-    div([
+    div('.container',[
       label('Name:'),
       input('.field', {attrs: {type: 'text'}}),
       hr(),
