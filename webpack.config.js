@@ -5,6 +5,7 @@ const path = require("path");
 const webpack = require('webpack');
 
 // Environment Constants
+const NODE_ENV = process.env.NODE_ENV;
 // const __BASENAME__ = JSON.stringify(process.env.BASENAME || '');
 // const __COVERAGE__ = !argv.watch && __TEST__;
 // const API_ENDPOINT = JSON.stringify(process.env.API_ENDPOINT);
@@ -12,7 +13,6 @@ const webpack = require('webpack');
 const __DEV__ = NODE_ENV === 'development';
 const __PROD__ = NODE_ENV === 'production';
 const __TEST__ = NODE_ENV === 'test';
-const NODE_ENV = process.env.NODE_ENV;
 
 // const GLOBALS = {
 //   'process.env': { NODE_ENV: JSON.stringify(NODE_ENV) },
@@ -26,8 +26,8 @@ const NODE_ENV = process.env.NODE_ENV;
 
 
 // Constants
-const DIST = path.join(ROOT, "dist");
 const ROOT = path.resolve(__dirname);
+const DIST = path.join(ROOT, "dist");
 const SRC = path.join(ROOT, "src");
 const PROJECT_PUBLIC_PATH = '/';
 
