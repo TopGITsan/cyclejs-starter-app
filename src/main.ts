@@ -1,7 +1,7 @@
 import { MainDOMSource, VNode, div, h1, hr, input, label, makeDOMDriver } from '@cycle/dom';
 import { run } from '@cycle/run';
 import { Stream } from 'xstream';
-
+import "./styles.scss";
 export interface Sources {
   DOM: MainDOMSource;
 }

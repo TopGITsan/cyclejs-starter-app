@@ -43,7 +43,7 @@ const webpackConfig = {
   module: { rules: [] }
 };
 // Entry
-const APP_ENTRY = path.join(SRC, 'index.ts');
+const APP_ENTRY = path.join(SRC, 'main.ts');
 webpackConfig.entry = {
   app: [APP_ENTRY],
  
@@ -91,7 +91,13 @@ if (__DEV__) {
         }
       }
     }),
-    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].[hash].css",
+      chunkFilename: "[name].[chunkhash].css",
+    }),
   )
 }
 
@@ -112,7 +118,21 @@ addRules([
     loader: "source-map-loader",
     enforce: "pre",
     exclude: [path.join(ROOT, "node_modules")],
-  }
+  },
+  {
+    test: /\.s[ac]ss$/i,
+    exclude: [path.join(ROOT, "node_modules")],
+    use: [
+      // Creates `style` nodes from JS strings
+      __PROD__
+      ? MiniCssExtractPlugin.loader
+      : "style-loader",
+      // Translates CSS into CommonJS
+      "css-loader",
+      // Compiles Sass to CSS
+      "sass-loader",
+    ],
+  },
 ]);
 
 module.exports = webpackConfig;
