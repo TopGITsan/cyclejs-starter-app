@@ -18,5 +18,5 @@
     "build": "webpack",
     "start": "npm run dev"
   },
-  "name": "cycle-webpack-starter"
+  "name": "cycle-typescript-webpack-starter"
 }
