@@ -1,3 +1,24 @@
+// Pico lightweight version This version reduces the weight of Pico by ~50%.
 @use "@picocss/pico/scss/pico" with (
-  $theme-color: "purple"
+  $theme-color: "purple",
+  $enable-semantic-container: true,
+  $enable-classes: true,
+  $modules: (
+    "content/code": false,
+    "forms/input-color": false,
+    "forms/input-date": false,
+    "forms/input-file": false,
+    "forms/input-range": false,
+    "forms/input-search": false,
+    "components/accordion": false,
+    "components/card": false,
+    "components/dropdown": false,
+    "components/loading": false,
+    "components/modal": false,
+    "components/nav": false,
+    "components/progress": false,
+    "components/tooltip": false,
+    "utilities/accessibility": false,
+    "utilities/reduce-motion": false
+  )
 );
